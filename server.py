@@ -11,6 +11,9 @@ def create_user():
 	if len(request.form['comment'])<1:
 		flash('Comment cannot be blank')
 		return redirect('/')
+	if len(request.form['name'])<1:
+		flash('Name cannot be blank')
+		return redirect('/')
 	elif len(request.form['comment'])>120:
 		flash('Comment must be less than 120 characters')
 		return redirect('/')
