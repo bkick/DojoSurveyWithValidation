@@ -1,0 +1,26 @@
+<html>
+    <head>
+       <title>Form Test Index</title>
+    </head>
+	<body>
+      <h1>Index Page</h1>
+      <h3>Create a User</h3>
+      <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <form action='result' method='post'>
+        Your Name: <input type='text' name='name'>
+        Dojo Location: <input type='text' name='dojo'>
+        Favorite Language: <input type='text' name='lang'>
+        Comment:<input type='text' name='comment'>
+        <input type='submit' value='Submit'>
+    </form>
+    </body>
+    </html>
